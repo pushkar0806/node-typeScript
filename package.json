@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/mongoose": "^5.3.7",
     "ts-node": "^7.0.1",
     "tslint": "^5.12.1",
     "typescript": "^3.2.2"
@@ -20,6 +21,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.3",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "winston": "^3.1.0"
   }
 }
