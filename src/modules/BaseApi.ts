@@ -1,4 +1,4 @@
-import {Application, Router } from "express";
+import {Application, Router } from 'express';
 
 export abstract class BaseCotroller {
 
@@ -7,7 +7,5 @@ export abstract class BaseCotroller {
         this.router =  Router();
     }
 
-    public abstract register( express: Application): void;
-
-    
+    public abstract register(express: Application): void;
 }

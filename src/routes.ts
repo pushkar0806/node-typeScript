@@ -1,9 +1,9 @@
-import * as express from "express";
+import * as express from 'express';
 
-import { ContactApi } from "./modules/contact/contact.controller";
+import { UserApi } from './modules/user/user.controller';
 
-export function registerRoutes(app: express.Application): void{
-   
-    new ContactApi().register(app);
+export function registerRoutes(app: express.Application): void {
+
+    new UserApi().register(app);
 
 }
