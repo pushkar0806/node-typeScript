@@ -1,4 +1,5 @@
 import { Application, Request, Response } from 'express';
+import * as logger from 'winston';
 import { BaseCotroller } from '../BaseApi';
 import { user } from './user.model';
 
@@ -14,6 +15,7 @@ export class UserApi extends BaseCotroller {
     }
 
     public init(): void {
+        logger.info('usrs listed called');
         this.router.get('/', this.getUsers);
     }
 

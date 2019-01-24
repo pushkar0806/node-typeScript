@@ -1,6 +1,13 @@
 import * as http from 'http';
+import * as winston from 'winston';
 import { App } from './App';
-import { logger } from './logger';
+
+export const logger: any = winston.createLogger({
+    transports: [
+        new winston.transports.Console(),
+        //new winston.transports.File({ filename: 'combined.log' }),
+      ],
+});
 
 const PORT: number = 3000;
 const app: App = new App();

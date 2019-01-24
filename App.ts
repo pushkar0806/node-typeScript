@@ -2,7 +2,7 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as http from 'http';
 import * as mongoose from 'mongoose';
-import { registerRoutes } from './routes';
+import { registerRoutes } from './src/routes';
 
 export class App {
 
@@ -17,6 +17,7 @@ export class App {
         this.middleware();
         this.setupRoutes();
         this.mongoSetup();
+
     }
 
     private middleware(): void {
