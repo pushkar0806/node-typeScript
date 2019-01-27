@@ -2,6 +2,7 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as http from 'http';
 import * as mongoose from 'mongoose';
+import { logger } from './src/logger';
 import { registerRoutes } from './src/routes';
 
 export class App {
@@ -17,7 +18,7 @@ export class App {
         this.middleware();
         this.setupRoutes();
         this.mongoSetup();
-
+        logger.warn('logger called from app');
     }
 
     private middleware(): void {

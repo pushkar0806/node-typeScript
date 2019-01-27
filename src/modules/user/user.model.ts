@@ -1,9 +1,5 @@
-import { Document, Model, model, Schema } from 'mongoose';
-import { IUser } from './user.type';
-
-export interface IUserModel extends IUser, Document {
-
-}
+import { Model, model, Schema } from 'mongoose';
+import { IUserModel } from './user.type';
 
 export const userSchema: Schema = new Schema({
     password: {
@@ -15,6 +11,8 @@ export const userSchema: Schema = new Schema({
     },
     email: {
         type: String,
+        required: true,
+        unique: true,
     },
     firstName: {
         required: 'Enter a first name',
@@ -26,4 +24,4 @@ export const userSchema: Schema = new Schema({
     },
 });
 
-export const user: Model<IUserModel> = model<IUserModel>('Contact', userSchema);
+export const userModel: Model<IUserModel> = model<IUserModel>('Contact', userSchema);
