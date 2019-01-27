@@ -11,9 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.16.0",
+    "@types/jsonwebtoken": "^8.3.0",
+    "bcrypt": "^3.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.3",
     "nodemon": "^1.18.9",
     "winston": "^3.1.0"

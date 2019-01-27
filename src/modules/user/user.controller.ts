@@ -67,10 +67,27 @@ export class UserApi extends BaseCotroller {
         }
     }
 
+    public async login(req: Request, res: Response): Promise <void> {
+        try {
+            const user: UserLib = new UserLib();
+            const {email, password} = req.body;
+            const loggedInUser: any = await user.loginUserAndCreateToken(email, password);
+            if (loggedInUser.token) {
+                logger.info(JSON.stringify({'loggedI nUser ': loggedInUser}));
+                res.send(loggedInUser);
+            } else {
+                res.status(401).send({message: 'Invalid login details'});
+            }
+        } catch (err) {
+            res.status(400).send(err);
+        }
+    }
+
     public init(): void {
         this.router.get('/', this.getUsers);
         this.router.post('/', this.addUser);
         this.router.put('/:id', this.updateUser);
         this.router.delete('/:id', this.deleteUser);
+        this.router.post('/login', this.login);
     }
 }
