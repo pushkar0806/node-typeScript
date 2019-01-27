@@ -1,8 +1,8 @@
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
-import { userModel } from './user.model';
-import { IUser, IUserModel } from './user.type';
 import { logger } from './../../logger';
+import { userModel } from './user.model';
+import { IUser } from './user.type';
 
 export class UserLib {
 
@@ -22,7 +22,7 @@ export class UserLib {
 
     public async saveUser(userData: IUser): Promise<IUser> {
         userData.password = await this.generateHash(userData.password);
-        const userObj: IUserModel = new userModel(userData);
+        const userObj: IUser = new userModel(userData);
 
         return userObj.save();
     }
@@ -32,7 +32,7 @@ export class UserLib {
     }
 
     public async updateUser(userId: string, userData: IUser): Promise<IUser> {
-        const user: IUserModel = await userModel.findById(userId);
+        const user: IUser = await userModel.findById(userId);
         user.set(userData);
 
         return user.save();
