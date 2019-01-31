@@ -36,4 +36,5 @@ process.on('unhandledRejection', (reason: Error) => {
     logger.error('Unhandled Promise Rejection: reason:', reason.message);
     logger.error(reason.stack);
     // application specific logging, throwing an error, or other logic here
+    process.exit(1);
 });
