@@ -1,5 +1,5 @@
-import * as winston from 'winston';
 import { existsSync, mkdirSync } from 'fs';
+import * as winston from 'winston';
 
 const logDir: string = './logs';
 
