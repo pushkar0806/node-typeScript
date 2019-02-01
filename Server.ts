@@ -1,6 +1,9 @@
+import * as dotenv from 'dotenv';
 import * as http from 'http';
 import { App } from './App';
 import { logger } from './src/logger';
+
+dotenv.config();
 
 const PORT: number = 3000;
 const app: App = new App();
