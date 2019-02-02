@@ -14,14 +14,14 @@ export const userSchema: Schema = new Schema({
         required: true,
         unique: true,
     },
-    firstName: {
+    first_name: {
         required: 'Enter a first name',
         type: String,
     },
-    lastName: {
+    last_name: {
         required: 'Enter a last name',
         type: String,
     },
 });
 
-export const userModel: Model<IUser> = model<IUser>('Contact', userSchema);
+export const userModel: Model<IUser> = model<IUser>('User', userSchema);

@@ -26,6 +26,17 @@ export class UserApi extends BaseCotroller {
         }
     }
 
+    public async getUserById(req: Request, res: Response): Promise <void> {
+        try {
+            logger.info(JSON.stringify({'user callled' : req.params}));
+            const user: UserLib = new UserLib();
+            const userDetails: IUser = await user.getUserById(req.params.id);
+            res.json(userDetails);
+        } catch (err) {
+            res.send(err);
+        }
+    }
+
     public async addUser(req: Request, res: Response): Promise<void> {
         try {
             const user: UserLib = new UserLib();
@@ -85,6 +96,7 @@ export class UserApi extends BaseCotroller {
 
     public init(): void {
         this.router.get('/', this.getUsers);
+        this.router.get('/:id', this.getUserById);
         this.router.post('/', this.addUser);
         this.router.put('/:id', this.updateUser);
         this.router.delete('/:id', this.deleteUser);

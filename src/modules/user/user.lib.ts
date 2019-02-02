@@ -20,6 +20,10 @@ export class UserLib {
         return userModel.find();
     }
 
+    public async getUserById(id: string): Promise<IUser> {
+        return userModel.findById(id);
+    }
+
     public async saveUser(userData: IUser): Promise<IUser> {
         userData.password = await this.generateHash(userData.password);
         const userObj: IUser = new userModel(userData);
