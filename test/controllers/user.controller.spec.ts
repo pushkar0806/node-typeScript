@@ -1,31 +1,16 @@
-import { expect } from 'chai';
-import * as request from 'supertest';
-import { App } from './../../App';
-import { logger } from './../../src/logger';
-let app: App;
-before(() => {
-  app = new App();
-});
+import { expect } from "chai";
+import * as request from "supertest";
+require("../../Server");
 
-describe('User module', () => {
+const url = "http://localhost:3000/api";
 
-  describe('"usercontroller.getUsers()"', () => {
-
-    it('should should list users', async () => {
-
-        const options: object = {
-          url: 'localhost:3000/api/',
-          resolveWithFullResponse: true,
-        };
-
-        try {
-          const users: any = await request(app)
-            .get('/users');
-
-          logger.info(JSON.stringify({'jso data': users}));
-        } catch (err) {
-            expect(err.statusCode).to.be.equal(401); // this is called
-        }
-    });
+describe("User module", () => {
+  it("should should list users", async () => {
+    try {
+      const users: any = await request(url).get("/users");
+      expect(users.statusCode).to.be.equal(200);
+    } catch (err) {
+      expect(err.statusCode).to.be.equal(401);
+    }
   });
 });

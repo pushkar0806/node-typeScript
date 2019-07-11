@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "test": "mocha --require ts-node/register test/**/*.ts",
+    "test": "mocha --require ts-node/register test/**/*.ts --exit",
     "build": "tsc",
     "postinstall": "npm run build",
     "dev": "ts-node Server.ts",
