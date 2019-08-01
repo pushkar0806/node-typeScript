@@ -32,3 +32,4 @@ export class App {
     mongoose.connect(this.mongoUrl);
   }
 }
+ 
