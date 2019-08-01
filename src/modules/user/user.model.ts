@@ -10,7 +10,7 @@ export const userSchema: Schema = new Schema({
     type: Date
   },
   email: {
-    type: String,
+    type: String, 
     required: true,
     unique: true
   },
