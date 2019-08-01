@@ -13,4 +13,4 @@ describe("User module", () => {
       expect(err.statusCode).to.be.equal(401);
     }
   });
-});
+}); 
