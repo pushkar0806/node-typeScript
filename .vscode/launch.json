@@ -10,7 +10,7 @@
             "name": "Launch Program",
             "program": "${workspaceFolder}/Server.ts",
             "outFiles": [
-                "${workspaceFolder}/dist/Server.js"
+               "${workspaceFolder}/dist/Server.js"
             ]
         }
     ]
