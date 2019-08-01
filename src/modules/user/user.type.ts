@@ -8,3 +8,4 @@ export interface IUser extends Document {
   created_date?: Date;
   token?: string;
 }
+ 
