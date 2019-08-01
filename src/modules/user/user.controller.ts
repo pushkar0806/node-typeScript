@@ -7,7 +7,7 @@ import { IUser } from "./user.type";
 export class UserApi extends BaseCotroller {
   constructor() {
     super();
-    this.init();
+    this.init(); 
   }
 
   public register(express: Application): void {
