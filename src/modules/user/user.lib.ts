@@ -12,7 +12,7 @@ export class UserLib {
   public async camparePassword(
     password: string,
     hash: string
-  ): Promise<boolean> {
+  ): Promise<boolean> { 
     return bcrypt.compareSync(password, hash);
   }
 
