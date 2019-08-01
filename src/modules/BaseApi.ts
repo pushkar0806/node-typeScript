@@ -6,5 +6,6 @@ export abstract class BaseCotroller {
     this.router = Router();
   }
 
+  
   public abstract register(express: Application): void;
 }
